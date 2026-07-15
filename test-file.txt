@@ -1,0 +1,1 @@
+Simple test file for checking the Snyk workflows.
