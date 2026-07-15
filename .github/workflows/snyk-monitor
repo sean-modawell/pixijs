@@ -1,0 +1,19 @@
+name: Update Snyk Project
+on:
+  push:
+    branches: [main]
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Upload dependancy tree to Snyk-UI
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: monitor # Default command is `test`
+          args: |
+            --all-projects
+            --fail-fast
+            --debug
