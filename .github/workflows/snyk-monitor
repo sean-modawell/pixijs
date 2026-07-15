@@ -1,7 +1,7 @@
 name: Update Snyk Project
 on:
   push:
-    branches: [main]
+    branches: [dev]
 jobs:
   post:
     runs-on: ubuntu-latest
